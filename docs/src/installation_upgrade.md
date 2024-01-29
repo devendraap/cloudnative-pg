@@ -423,11 +423,11 @@ spec:
 #### Labels
 
 In version 1.18, we deprecated the `postgresql` label in pods to identify the
-name of the cluster, and replaced it with the more canonical `cnpg.io/cluster`
+name of the cluster, and replaced it with the more canonical `acceldata.io/cluster`
 label. The `postgresql` label is no longer maintained.
 
 Similarly, from this version, the `role` label is deprecated. The new label
-`cnpg.io/instanceRole` is now used, and will entirely replace the `role` label
+`acceldata.io/instanceRole` is now used, and will entirely replace the `role` label
 in a future release.
 
 #### Shortcut for keeping the existing behavior

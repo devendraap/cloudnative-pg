@@ -40,7 +40,7 @@ func (r *ScheduledBackup) SetupWebhookWithManager(mgr ctrl.Manager) error {
 		Complete()
 }
 
-// +kubebuilder:webhook:webhookVersions={v1},admissionReviewVersions={v1},path=/mutate-postgresql-cnpg-io-v1-scheduledbackup,mutating=true,failurePolicy=fail,groups=postgresql.cnpg.io,resources=scheduledbackups,verbs=create;update,versions=v1,name=mscheduledbackup.cnpg.io,sideEffects=None
+// +kubebuilder:webhook:webhookVersions={v1},admissionReviewVersions={v1},path=/mutate-postgresql-cnpg-io-v1-scheduledbackup,mutating=true,failurePolicy=fail,groups=postgresql.acceldata.io,resources=scheduledbackups,verbs=create;update,versions=v1,name=mscheduledbackup.acceldata.io,sideEffects=None
 
 var _ webhook.Defaulter = &ScheduledBackup{}
 
@@ -50,7 +50,7 @@ func (r *ScheduledBackup) Default() {
 }
 
 // TODO(user): change verbs to "verbs=create;update;delete" if you want to enable deletion validation.
-// +kubebuilder:webhook:webhookVersions={v1},admissionReviewVersions={v1},verbs=create;update,path=/validate-postgresql-cnpg-io-v1-scheduledbackup,mutating=false,failurePolicy=fail,groups=postgresql.cnpg.io,resources=scheduledbackups,versions=v1,name=vscheduledbackup.cnpg.io,sideEffects=None
+// +kubebuilder:webhook:webhookVersions={v1},admissionReviewVersions={v1},verbs=create;update,path=/validate-postgresql-cnpg-io-v1-scheduledbackup,mutating=false,failurePolicy=fail,groups=postgresql.acceldata.io,resources=scheduledbackups,versions=v1,name=vscheduledbackup.acceldata.io,sideEffects=None
 
 var _ webhook.Validator = &ScheduledBackup{}
 
@@ -66,7 +66,7 @@ func (r *ScheduledBackup) ValidateCreate() (admission.Warnings, error) {
 	}
 
 	return nil, apierrors.NewInvalid(
-		schema.GroupKind{Group: "scheduledbackup.cnpg.io", Kind: "Backup"},
+		schema.GroupKind{Group: "scheduledbackup.acceldata.io", Kind: "Backup"},
 		r.Name, allErrs)
 }
 

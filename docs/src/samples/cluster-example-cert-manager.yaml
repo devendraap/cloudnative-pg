@@ -34,7 +34,7 @@ kind: Secret
 metadata:
   name: my-postgres-server-cert
   labels:
-    cnpg.io/reload: ""
+    acceldata.io/reload: ""
 ---
 apiVersion: cert-manager.io/v1
 kind: Certificate
@@ -89,7 +89,7 @@ kind: Secret
 metadata:
   name: my-postgres-client-cert
   labels:
-    cnpg.io/reload: ""
+    acceldata.io/reload: ""
 ---
 apiVersion: cert-manager.io/v1
 kind: Certificate
@@ -105,7 +105,7 @@ spec:
     kind: Issuer
     group: cert-manager.io
 ---
-apiVersion: postgresql.cnpg.io/v1
+apiVersion: postgresql.acceldata.io/v1
 kind: Cluster
 metadata:
   name: cluster-example

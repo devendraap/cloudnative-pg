@@ -151,9 +151,9 @@ func CheckWebhookReady(env *TestingEnvironment, namespace string) error {
 	}
 
 	customResourceDefinitionsName := []string{
-		"backups.postgresql.cnpg.io",
-		"clusters.postgresql.cnpg.io",
-		"scheduledbackups.postgresql.cnpg.io",
+		"backups.postgresql.acceldata.io",
+		"clusters.postgresql.acceldata.io",
+		"scheduledbackups.postgresql.acceldata.io",
 	}
 
 	ctx := context.Background()

@@ -26,7 +26,7 @@ This example helps to show how CloudNativePG implements a PgBouncer
 pooler:
 
 ```yaml
-apiVersion: postgresql.cnpg.io/v1
+apiVersion: postgresql.acceldata.io/v1
 kind: Pooler
 metadata:
   name: pooler-example-rw
@@ -185,7 +185,7 @@ containers use images from `ghcr.io/cloudnative-pg/pgbouncer`.
 This example shows `Pooler` specifying `PodAntiAffinity``:
 
 ```yaml
-apiVersion: postgresql.cnpg.io/v1
+apiVersion: postgresql.acceldata.io/v1
 kind: Pooler
 metadata:
   name: pooler-example-rw
@@ -224,7 +224,7 @@ spec:
 This example sets resources and changes the used image:
 
 ```yaml
-apiVersion: postgresql.cnpg.io/v1
+apiVersion: postgresql.acceldata.io/v1
 kind: Pooler
 metadata:
   name: pooler-example-rw
@@ -539,7 +539,7 @@ metadata:
 spec:
   selector:
     matchLabels:
-      cnpg.io/poolerName: <POOLER_NAME>
+      acceldata.io/poolerName: <POOLER_NAME>
   podMetricsEndpoints:
   - port: metrics
 ```

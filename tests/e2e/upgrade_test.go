@@ -197,7 +197,7 @@ var _ = Describe("Upgrade", Label(tests.LabelUpgrade, tests.LabelNoOpenshift), O
 			oldPrimary := cluster.Status.CurrentPrimary
 			oldPrimaryTimestamp := cluster.Status.CurrentPrimaryTimestamp
 			// Update the configuration. It may take some time after the
-			// upgrade for the webhook "mcluster.cnpg.io" to work and accept
+			// upgrade for the webhook "mcluster.acceldata.io" to work and accept
 			// the `apply` command
 
 			Eventually(func() error {

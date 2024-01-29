@@ -54,7 +54,7 @@ var _ = Describe("Pooler ServiceAccount, Role, and RoleBinding", func() {
 			Expect(role.Name).To(Equal(pooler.Name))
 			Expect(role.Namespace).To(Equal(pooler.Namespace))
 			Expect(role.Rules).To(HaveLen(3))
-			Expect(role.Rules[0].APIGroups).To(ContainElement("postgresql.cnpg.io"))
+			Expect(role.Rules[0].APIGroups).To(ContainElement("postgresql.acceldata.io"))
 			Expect(role.Rules[0].Resources).To(ContainElement("poolers"))
 			Expect(role.Rules[0].Verbs).To(ConsistOf("get", "watch"))
 			Expect(role.Rules[0].ResourceNames).To(ContainElement(pooler.Name))

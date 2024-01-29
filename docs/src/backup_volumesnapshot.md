@@ -77,7 +77,7 @@ A generic example with volume snapshots (assuming that PGDATA and WALs share
 the same storage class) is the following:
 
 ``` yaml
-apiVersion: postgresql.cnpg.io/v1
+apiVersion: postgresql.acceldata.io/v1
 kind: Cluster
 metadata:
   name: snapshot-cluster
@@ -187,7 +187,7 @@ For example, in case you want to issue an on-demand cold backup, you can
 create a `Backup` object with `.spec.online: false`:
 
 ```yaml
-apiVersion: postgresql.cnpg.io/v1
+apiVersion: postgresql.acceldata.io/v1
 kind: Backup
 metadata:
   name: snapshot-cluster-cold-backup-example
@@ -201,7 +201,7 @@ spec:
 Similarly, for the ScheduledBackup:
 
 ```yaml
-apiVersion: postgresql.cnpg.io/v1
+apiVersion: postgresql.acceldata.io/v1
 kind: ScheduledBackup
 metadata:
   name: snapshot-cluster-cold-backup-example
@@ -268,7 +268,7 @@ snapshots and that stores the WAL archive in a S3 bucket via IAM role for the
 Service Account (IRSA, see [AWS S3](appendixes/object_stores.md#aws-s3)):
 
 ``` yaml
-apiVersion: postgresql.cnpg.io/v1
+apiVersion: postgresql.acceldata.io/v1
 kind: Cluster
 metadata:
   name: hendrix
@@ -298,7 +298,7 @@ spec:
       annotations:
         eks.amazonaws.com/role-arn: "@ARN@"
 ---
-apiVersion: postgresql.cnpg.io/v1
+apiVersion: postgresql.acceldata.io/v1
 kind: ScheduledBackup
 metadata:
   name: hendrix-vs-backup

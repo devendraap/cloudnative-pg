@@ -177,19 +177,19 @@ to solve the problem manually.
     support and assistance of EDB engineering team.
 
 From version 1.11.0 of the operator, you can use the
-`cnpg.io/reconciliationLoop` annotation to temporarily disable the
+`acceldata.io/reconciliationLoop` annotation to temporarily disable the
 reconciliation loop on a selected PostgreSQL cluster, as follows:
 
 ``` yaml
 metadata:
   name: cluster-example-no-reconcile
   annotations:
-    cnpg.io/reconciliationLoop: "disabled"
+    acceldata.io/reconciliationLoop: "disabled"
 spec:
   # ...
 ```
 
-The `cnpg.io/reconciliationLoop` must be used with extreme care
+The `acceldata.io/reconciliationLoop` must be used with extreme care
 and for the sole duration of the extraordinary/emergency operation.
 
 !!! Warning

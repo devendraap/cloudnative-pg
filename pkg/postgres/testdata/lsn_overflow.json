@@ -19,16 +19,16 @@
           "resourceVersion": "3656838",
           "creationTimestamp": "2021-12-09T16:10:34Z",
           "labels": {
-            "cnpg.io/cluster": "sandbox",
-            "cnpg.io/instanceRole": "replica"
+            "acceldata.io/cluster": "sandbox",
+            "acceldata.io/instanceRole": "replica"
           },
           "annotations": {
-            "cnpg.io/nodeSerial": "6",
-            "cnpg.io/operatorVersion": "1.10.0"
+            "acceldata.io/nodeSerial": "6",
+            "acceldata.io/operatorVersion": "1.10.0"
           },
           "ownerReferences": [
             {
-              "apiVersion": "postgresql.cnpg.io/v1",
+              "apiVersion": "postgresql.acceldata.io/v1",
               "kind": "Cluster",
               "name": "sandbox",
               "uid": "b1ec3b05-27e3-408b-b66d-43b2a3608fcf",
@@ -47,12 +47,12 @@
                 "f:metadata": {
                   "f:annotations": {
                     ".": {},
-                    "f:cnpg.io/nodeSerial": {},
-                    "f:cnpg.io/operatorVersion": {}
+                    "f:acceldata.io/nodeSerial": {},
+                    "f:acceldata.io/operatorVersion": {}
                   },
                   "f:labels": {
                     ".": {},
-                    "f:cnpg.io/cluster": {},
+                    "f:acceldata.io/cluster": {},
                     "f:postgresql": {},
                     "f:role": {}
                   },
@@ -680,7 +680,7 @@
                     "labelSelector": {
                       "matchExpressions": [
                         {
-                          "key": "cnpg.io/cluster",
+                          "key": "acceldata.io/cluster",
                           "operator": "In",
                           "values": [
                             "sandbox"
@@ -828,16 +828,16 @@
           "resourceVersion": "3650327",
           "creationTimestamp": "2021-12-09T15:23:04Z",
           "labels": {
-            "cnpg.io/cluster": "sandbox",
-            "cnpg.io/instanceRole": "replica"
+            "acceldata.io/cluster": "sandbox",
+            "acceldata.io/instanceRole": "replica"
           },
           "annotations": {
-            "cnpg.io/nodeSerial": "3",
-            "cnpg.io/operatorVersion": "1.10.0"
+            "acceldata.io/nodeSerial": "3",
+            "acceldata.io/operatorVersion": "1.10.0"
           },
           "ownerReferences": [
             {
-              "apiVersion": "postgresql.cnpg.io/v1",
+              "apiVersion": "postgresql.acceldata.io/v1",
               "kind": "Cluster",
               "name": "sandbox",
               "uid": "b1ec3b05-27e3-408b-b66d-43b2a3608fcf",
@@ -856,12 +856,12 @@
                 "f:metadata": {
                   "f:annotations": {
                     ".": {},
-                    "f:cnpg.io/nodeSerial": {},
-                    "f:cnpg.io/operatorVersion": {}
+                    "f:acceldata.io/nodeSerial": {},
+                    "f:acceldata.io/operatorVersion": {}
                   },
                   "f:labels": {
                     ".": {},
-                    "f:cnpg.io/cluster": {},
+                    "f:acceldata.io/cluster": {},
                     "f:postgresql": {},
                     "f:role": {}
                   },
@@ -1489,7 +1489,7 @@
                     "labelSelector": {
                       "matchExpressions": [
                         {
-                          "key": "cnpg.io/cluster",
+                          "key": "acceldata.io/cluster",
                           "operator": "In",
                           "values": [
                             "sandbox"

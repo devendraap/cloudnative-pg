@@ -261,7 +261,7 @@ For example, the following manifest will create a cluster with replication
 slots disabled.
 
 ```yaml
-apiVersion: postgresql.cnpg.io/v1
+apiVersion: postgresql.acceldata.io/v1
 kind: Cluster
 metadata:
   name: cluster-example
@@ -281,7 +281,7 @@ You can also control the frequency with which a standby queries the
 the replication slots, like in this example:
 
 ```yaml
-apiVersion: postgresql.cnpg.io/v1
+apiVersion: postgresql.acceldata.io/v1
 kind: Cluster
 metadata:
   name: cluster-example

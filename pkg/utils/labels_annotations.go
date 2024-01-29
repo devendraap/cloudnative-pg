@@ -26,7 +26,7 @@ import (
 )
 
 // MetadataNamespace is the annotation and label namespace used by the operator
-const MetadataNamespace = "cnpg.io"
+const MetadataNamespace = "acceldata.io"
 
 // When you add a new label or annotation, please make sure that you also update the
 // publicly visible documentation, namely the `docs/src/labels_annotations.md` file
@@ -42,7 +42,7 @@ const (
 	PvcRoleLabelName = MetadataNamespace + "/pvcRole"
 
 	// TablespaceNameLabelName is the name of the label containing tablespace name that a pvc holds
-	TablespaceNameLabelName = "cnpg.io/tablespaceName"
+	TablespaceNameLabelName = "acceldata.io/tablespaceName"
 
 	// PodRoleLabelName is the name of the label containing the podRole value
 	PodRoleLabelName = MetadataNamespace + "/podRole"

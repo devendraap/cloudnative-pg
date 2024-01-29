@@ -53,7 +53,7 @@ Once that secret has been created, you can configure your cluster like in
 the following example:
 
 ```yaml
-apiVersion: postgresql.cnpg.io/v1
+apiVersion: postgresql.acceldata.io/v1
 kind: Cluster
 [...]
 spec:
@@ -82,7 +82,7 @@ We can configure CloudNativePG to inject them using the `serviceAccountTemplate`
 stanza:
 
 ```yaml
-apiVersion: postgresql.cnpg.io/v1
+apiVersion: postgresql.acceldata.io/v1
 kind: Cluster
 metadata:
 [...]
@@ -115,7 +115,7 @@ In this example, it will use the `bucket` of **Linode** in the region
 `us-east1`.
 
 ```yaml
-apiVersion: postgresql.cnpg.io/v1
+apiVersion: postgresql.acceldata.io/v1
 kind: Cluster
 [...]
 spec:
@@ -130,7 +130,7 @@ spec:
 In case you're using **Digital Ocean Spaces**, you will have to use the Path-style syntax.
 In this example, it will use the `bucket` from **Digital Ocean Spaces** in the region `SFO3`.
 ```yaml
-apiVersion: postgresql.cnpg.io/v1
+apiVersion: postgresql.acceldata.io/v1
 kind: Cluster
 [...]
 spec:
@@ -149,7 +149,7 @@ spec:
 
 !!! Note
     If you want ConfigMaps and Secrets to be **automatically** reloaded by instances, you can
-    add a label with key `cnpg.io/reload` to the Secrets/ConfigMaps. Otherwise, you will have to reload
+    add a label with key `acceldata.io/reload` to the Secrets/ConfigMaps. Otherwise, you will have to reload
     the instances using the `kubectl cnpg reload` subcommand.
 
 ## Azure Blob Storage
@@ -171,7 +171,7 @@ Using **Azure AD Workload Identity**, you can avoid saving the credentials into 
 and have a Cluster configuration adding the `inheritFromAzureAD` as follows:
 
 ```yaml
-apiVersion: postgresql.cnpg.io/v1
+apiVersion: postgresql.acceldata.io/v1
 kind: Cluster
 [...]
 spec:
@@ -201,7 +201,7 @@ Given the previous secret, the provided credentials can be injected inside the c
 configuration:
 
 ```yaml
-apiVersion: postgresql.cnpg.io/v1
+apiVersion: postgresql.acceldata.io/v1
 kind: Cluster
 [...]
 spec:
@@ -268,7 +268,7 @@ Please use the following example as a reference:
 
 
 ```yaml
-apiVersion: postgresql.cnpg.io/v1
+apiVersion: postgresql.acceldata.io/v1
 kind: Cluster
 [...]
 spec:
@@ -301,7 +301,7 @@ kubectl create secret generic backup-creds --from-file=gcsCredentials=gcs_creden
 This will create the `Secret` with the name `backup-creds` to be used in the yaml file like this:
 
 ```yaml
-apiVersion: postgresql.cnpg.io/v1
+apiVersion: postgresql.acceldata.io/v1
 kind: Cluster
 [...]
 spec:
@@ -422,7 +422,7 @@ Proceed by configuring MinIO Gateway service as the `endpointURL` in the `Cluste
 definition, then choose a bucket name to replace `BUCKET_NAME`:
 
 ```yaml
-apiVersion: postgresql.cnpg.io/v1
+apiVersion: postgresql.acceldata.io/v1
 kind: Cluster
 [...]
 spec:

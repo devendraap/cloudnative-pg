@@ -63,7 +63,7 @@ provides some guidance on how the creation of a PostGIS cluster can be done.
     image name or, preferably, the SHA256 digest for true immutability.
 
 ```yaml
-apiVersion: postgresql.cnpg.io/v1
+apiVersion: postgresql.acceldata.io/v1
 kind: Cluster
 metadata:
   name: postgis-example

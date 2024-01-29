@@ -17,7 +17,7 @@ This simple example shows how to mount an existing TLS secret (named
 Postgres pod.
 
 ```yaml
-apiVersion: postgresql.cnpg.io/v1
+apiVersion: postgresql.acceldata.io/v1
 kind: Cluster
 metadata:
   name: cluster-example-projected-volumes
@@ -55,7 +55,7 @@ This can be overridden by specifying a volume claim template in the `.spec.ephem
 In the following example, a `1Gi` ephemeral volume is set.
 
 ```yaml
-apiVersion: postgresql.cnpg.io/v1
+apiVersion: postgresql.acceldata.io/v1
 kind: Cluster
 metadata:
   name: cluster-example-ephemeral-volume-source
@@ -96,7 +96,7 @@ This example defines a PostgreSQL cluster using the `Australia/Sydney`
 timezone as the default cluster-level timezone:
 
 ```yaml
-apiVersion: postgresql.cnpg.io/v1
+apiVersion: postgresql.acceldata.io/v1
 kind: Cluster
 metadata:
   name: cluster-example
@@ -115,7 +115,7 @@ The `envFrom` stanza can refer to ConfigMaps or secrets to use their content as
 environment variables:
 
 ```yaml
-apiVersion: postgresql.cnpg.io/v1
+apiVersion: postgresql.acceldata.io/v1
 kind: Cluster
 metadata:
   name: cluster-example

@@ -76,7 +76,7 @@ spec:
         volumeMounts:
           - mountPath: /controller
             name: scratch-data
-          - mountPath: /run/secrets/cnpg.io/webhook
+          - mountPath: /run/secrets/acceldata.io/webhook
             name: webhook-certificates
         securityContext:
           runAsUser: 10001

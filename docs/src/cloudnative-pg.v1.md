@@ -21,7 +21,7 @@
 <table class="table">
 <thead><tr><th width="30%">Field</th><th>Description</th></tr></thead>
 <tbody>
-<tr><td><code>apiVersion</code> <B>[Required]</B><br/>string</td><td><code>postgresql.cnpg.io/v1</code></td></tr>
+<tr><td><code>apiVersion</code> <B>[Required]</B><br/>string</td><td><code>postgresql.acceldata.io/v1</code></td></tr>
 <tr><td><code>kind</code> <B>[Required]</B><br/>string</td><td><code>Backup</code></td></tr>
 <tr><td><code>metadata</code> <B>[Required]</B><br/>
 <a href="https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.28/#objectmeta-v1-meta"><i>meta/v1.ObjectMeta</i></a>
@@ -59,7 +59,7 @@ More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-
 <table class="table">
 <thead><tr><th width="30%">Field</th><th>Description</th></tr></thead>
 <tbody>
-<tr><td><code>apiVersion</code> <B>[Required]</B><br/>string</td><td><code>postgresql.cnpg.io/v1</code></td></tr>
+<tr><td><code>apiVersion</code> <B>[Required]</B><br/>string</td><td><code>postgresql.acceldata.io/v1</code></td></tr>
 <tr><td><code>kind</code> <B>[Required]</B><br/>string</td><td><code>Cluster</code></td></tr>
 <tr><td><code>metadata</code> <B>[Required]</B><br/>
 <a href="https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.28/#objectmeta-v1-meta"><i>meta/v1.ObjectMeta</i></a>
@@ -97,7 +97,7 @@ More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-
 <table class="table">
 <thead><tr><th width="30%">Field</th><th>Description</th></tr></thead>
 <tbody>
-<tr><td><code>apiVersion</code> <B>[Required]</B><br/>string</td><td><code>postgresql.cnpg.io/v1</code></td></tr>
+<tr><td><code>apiVersion</code> <B>[Required]</B><br/>string</td><td><code>postgresql.acceldata.io/v1</code></td></tr>
 <tr><td><code>kind</code> <B>[Required]</B><br/>string</td><td><code>Pooler</code></td></tr>
 <tr><td><code>metadata</code> <B>[Required]</B><br/>
 <a href="https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.28/#objectmeta-v1-meta"><i>meta/v1.ObjectMeta</i></a>
@@ -135,7 +135,7 @@ More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-
 <table class="table">
 <thead><tr><th width="30%">Field</th><th>Description</th></tr></thead>
 <tbody>
-<tr><td><code>apiVersion</code> <B>[Required]</B><br/>string</td><td><code>postgresql.cnpg.io/v1</code></td></tr>
+<tr><td><code>apiVersion</code> <B>[Required]</B><br/>string</td><td><code>postgresql.acceldata.io/v1</code></td></tr>
 <tr><td><code>kind</code> <B>[Required]</B><br/>string</td><td><code>ScheduledBackup</code></td></tr>
 <tr><td><code>metadata</code> <B>[Required]</B><br/>
 <a href="https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.28/#objectmeta-v1-meta"><i>meta/v1.ObjectMeta</i></a>

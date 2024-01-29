@@ -91,7 +91,7 @@ the `postgres` database using the `postgres` user, via the password stored in
 the `cluster-pg96-superuser` secret.
 
 ```yaml
-apiVersion: postgresql.cnpg.io/v1
+apiVersion: postgresql.acceldata.io/v1
 kind: Cluster
 metadata:
   name: cluster-microservice
@@ -178,7 +178,7 @@ the `postgres` database using the `postgres` user, via the password stored in
 the `cluster-pg96-superuser` secret.
 
 ```yaml
-apiVersion: postgresql.cnpg.io/v1
+apiVersion: postgresql.acceldata.io/v1
 kind: Cluster
 metadata:
   name: cluster-monolith

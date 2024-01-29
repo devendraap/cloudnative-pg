@@ -76,7 +76,7 @@ metadata:
 spec:
   selector:
     matchLabels:
-      "cnpg.io/cluster": cluster-example
+      "acceldata.io/cluster": cluster-example
   podMetricsEndpoints:
   - port: metrics
 ```
@@ -87,7 +87,7 @@ spec:
 
 !!! Important
     Label `postgresql`, used in previous versions of this document, is deprecated
-    and will be removed in the future. Please use the label `cnpg.io/cluster`
+    and will be removed in the future. Please use the label `acceldata.io/cluster`
     instead to select the instances.
 
 ### Predefined set of metrics
@@ -366,7 +366,7 @@ Custom metrics can be defined by users by referring to the created `Configmap`/`
 under the `.spec.monitoring.customQueriesConfigMap` or `customQueriesSecret` section as in the following example:
 
 ```yaml
-apiVersion: postgresql.cnpg.io/v1
+apiVersion: postgresql.acceldata.io/v1
 kind: Cluster
 metadata:
   name: cluster-example
@@ -389,7 +389,7 @@ Take care that the referred resources have to be created **in the same namespace
 
 !!! Note
     If you want ConfigMaps and Secrets to be **automatically** reloaded by instances, you can
-    add a label with key `cnpg.io/reload` to it, otherwise you will have to reload
+    add a label with key `acceldata.io/reload` to it, otherwise you will have to reload
     the instances using the `kubectl cnpg reload` subcommand.
 
 !!! Important
@@ -409,7 +409,7 @@ metadata:
   name: example-monitoring
   namespace: test
   labels:
-    cnpg.io/reload: ""
+    acceldata.io/reload: ""
 data:
   custom-queries: |
     pg_replication:

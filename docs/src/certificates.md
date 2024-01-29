@@ -91,7 +91,7 @@ the following parameters:
 
 !!! Note
     If you want ConfigMaps and secrets to be reloaded by instances, you can add
-    a label with the key `cnpg.io/reload` to it. Otherwise you must reload the
+    a label with the key `acceldata.io/reload` to it. Otherwise you must reload the
     instances using the `kubectl cnpg reload` subcommand.
 
 #### Example
@@ -120,7 +120,7 @@ Create a PostgreSQL cluster referencing those secrets:
 
 ```bash
 kubectl apply -f - <<EOF
-apiVersion: postgresql.cnpg.io/v1
+apiVersion: postgresql.acceldata.io/v1
 kind: Cluster
 metadata:
   name: cluster-example
@@ -156,7 +156,7 @@ kind: Secret
 metadata:
   name: my-postgres-server-cert
   labels:
-    cnpg.io/reload: ""
+    acceldata.io/reload: ""
 ---
 apiVersion: cert-manager.io/v1
 kind: Certificate
@@ -187,7 +187,7 @@ Cert-manager creates a secret named `my-postgres-server-cert`. It contains all
 the needed files and can be referenced from a cluster as follows:
 
 ```yaml
-apiVersion: postgresql.cnpg.io/v1
+apiVersion: postgresql.acceldata.io/v1
 kind: Cluster
 metadata:
   name: cluster-example
@@ -229,7 +229,7 @@ the following parameters:
 
 !!! Note
     If you want ConfigMaps and secrets to be automatically reloaded by
-    instances, you can add a label with the key `cnpg.io/reload` to it. Otherwise,
+    instances, you can add a label with the key `acceldata.io/reload` to it. Otherwise,
     you must reload the instances using the `kubectl cnpg reload` subcommand.
 
 #### Cert-manager example
@@ -251,7 +251,7 @@ kind: Secret
 metadata:
   name: my-postgres-client-cert
   labels:
-    cnpg.io/reload: ""
+    acceldata.io/reload: ""
 ---
 apiVersion: cert-manager.io/v1
 kind: Certificate
@@ -272,7 +272,7 @@ Cert-manager creates a secret named `my-postgres-client-cert` that contains all
 the needed files. You can reference it from a cluster as follows:
 
 ```yaml
-apiVersion: postgresql.cnpg.io/v1
+apiVersion: postgresql.acceldata.io/v1
 kind: Cluster
 metadata:
   name: cluster-example

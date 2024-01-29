@@ -1,5 +1,5 @@
 # Example of PostgreSQL cluster using ssl enabled
-apiVersion: postgresql.cnpg.io/v1
+apiVersion: postgresql.acceldata.io/v1
 kind: Cluster
 metadata:
   name: p-locale

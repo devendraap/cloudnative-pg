@@ -413,7 +413,7 @@ CloudNativePG you can configure the cluster level time zone in the
 `.spec.postgresql.parameters` section as in the following example:
 
 ``` yaml
-apiVersion: postgresql.cnpg.io/v1
+apiVersion: postgresql.acceldata.io/v1
 kind: Cluster
 metadata:
   name: pg-italy

@@ -401,7 +401,7 @@ common case for this will be a minor upgrade of PostgreSQL image.
 
 !!! Note
     If you want ConfigMaps and Secrets to be **automatically** reloaded
-    by instances, you can add a label with key `cnpg.io/reload` to it.
+    by instances, you can add a label with key `acceldata.io/reload` to it.
 
 ### Reload
 
@@ -781,7 +781,7 @@ associated PVCs from a Kubernetes cluster.
 
 The optional `--keep-pvc` flag, if specified, allows you to keep the PVCs,
 while removing all `metadata.ownerReferences` that were set by the instance.
-Additionally, the `cnpg.io/pvcStatus` label on the PVCs will change from
+Additionally, the `acceldata.io/pvcStatus` label on the PVCs will change from
 `ready` to `detached` to signify that they are no longer in use.
 
 Running again the command without the `--keep-pvc` flag will remove the

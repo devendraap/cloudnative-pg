@@ -56,7 +56,7 @@ For example, you can define your backups with a retention policy of 30 days as
 follows:
 
 ```yaml
-apiVersion: postgresql.cnpg.io/v1
+apiVersion: postgresql.acceldata.io/v1
 kind: Cluster
 [...]
 spec:
@@ -135,7 +135,7 @@ The excerpt of a YAML manifest below provides an example of usage of this
 feature:
 
 ```yaml
-apiVersion: postgresql.cnpg.io/v1
+apiVersion: postgresql.acceldata.io/v1
 kind: Cluster
 [...]
 spec:

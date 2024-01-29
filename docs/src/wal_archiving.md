@@ -20,7 +20,7 @@ If required, you can choose to compress WAL files as soon as they
 are uploaded and/or encrypt them:
 
 ```yaml
-apiVersion: postgresql.cnpg.io/v1
+apiVersion: postgresql.acceldata.io/v1
 kind: Cluster
 [...]
 spec:
@@ -54,7 +54,7 @@ can use the parallel WAL archiving feature of the instance manager
 like in the following example:
 
 ```yaml
-apiVersion: postgresql.cnpg.io/v1
+apiVersion: postgresql.acceldata.io/v1
 kind: Cluster
 [...]
 spec:

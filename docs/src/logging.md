@@ -106,7 +106,7 @@ This example shows a PostgreSQL 13 `Cluster` deployment that results in
 `pgaudit` being enabled with the requested configuration:
 
 ```yaml
-apiVersion: postgresql.cnpg.io/v1
+apiVersion: postgresql.acceldata.io/v1
 kind: Cluster
 metadata:
   name: cluster-example

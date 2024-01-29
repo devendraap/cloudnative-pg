@@ -67,10 +67,10 @@ const (
 	ValidatingWebhookConfigurationName = "cnpg-validating-webhook-configuration"
 
 	// The name of the directory containing the TLS certificates
-	defaultWebhookCertDir = "/run/secrets/cnpg.io/webhook"
+	defaultWebhookCertDir = "/run/secrets/acceldata.io/webhook"
 
 	// LeaderElectionID The operator Leader Election ID
-	LeaderElectionID = "db9c8771.cnpg.io"
+	LeaderElectionID = "db9c8771.acceldata.io"
 
 	// CaSecretName is the name of the secret which is hosting the Operator CA
 	CaSecretName = "cnpg-ca-secret" // #nosec
@@ -368,9 +368,9 @@ func ensurePKI(
 		MutatingWebhookConfigurationName:   MutatingWebhookConfigurationName,
 		ValidatingWebhookConfigurationName: ValidatingWebhookConfigurationName,
 		CustomResourceDefinitionsName: []string{
-			"backups.postgresql.cnpg.io",
-			"clusters.postgresql.cnpg.io",
-			"scheduledbackups.postgresql.cnpg.io",
+			"backups.postgresql.acceldata.io",
+			"clusters.postgresql.acceldata.io",
+			"scheduledbackups.postgresql.acceldata.io",
 		},
 		OperatorDeploymentLabelSelector: "app.kubernetes.io/name=cloudnative-pg",
 	}

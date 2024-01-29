@@ -9,12 +9,12 @@ webhooks:
   - clientConfig:
       service:
         containerPort: 9443
-    name: mcluster.cnpg.io
+    name: mcluster.acceldata.io
   - clientConfig:
       service:
         containerPort: 9443
-    name: mbackup.cnpg.io
+    name: mbackup.acceldata.io
   - clientConfig:
       service:
         containerPort: 9443
-    name: mscheduledbackup.cnpg.io
+    name: mscheduledbackup.acceldata.io

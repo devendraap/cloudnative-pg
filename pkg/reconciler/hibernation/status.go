@@ -41,7 +41,7 @@ const (
 const (
 	// HibernationConditionType is the name of the condition representing
 	// the hibernation status
-	HibernationConditionType = "cnpg.io/hibernation"
+	HibernationConditionType = "acceldata.io/hibernation"
 
 	// HibernationConditionReasonWrongAnnotationValue is the value of the hibernation
 	// condition that is used when the value of the annotation is not correct

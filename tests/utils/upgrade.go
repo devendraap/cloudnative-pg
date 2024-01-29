@@ -84,7 +84,7 @@ func InstallLatestCNPGOperator(releaseTag string, env *TestingEnvironment) {
 	Eventually(func() error {
 		_, _, err := RunUnchecked(
 			"kubectl wait --for condition=established --timeout=60s " +
-				"crd/clusters.postgresql.cnpg.io")
+				"crd/clusters.postgresql.acceldata.io")
 		return err
 	}, 150).ShouldNot(HaveOccurred())
 

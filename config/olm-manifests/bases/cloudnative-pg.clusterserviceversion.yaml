@@ -110,7 +110,7 @@ spec:
   customresourcedefinitions:
     owned:
     - kind: Backup
-      name: backups.postgresql.cnpg.io
+      name: backups.postgresql.acceldata.io
       displayName: Backups
       description: PostgreSQL backup (physical base backup)
       resources:
@@ -134,7 +134,7 @@ spec:
         x-descriptors:
         - 'urn:alm:descriptor:io.kubernetes.phase'
     - kind: Cluster
-      name: clusters.postgresql.cnpg.io
+      name: clusters.postgresql.acceldata.io
       version: v1
       displayName: Cluster
       description: PostgreSQL cluster (primary/standby architecture)
@@ -516,7 +516,7 @@ spec:
         x-descriptors:
           - 'urn:alm:descriptor:io.kubernetes.conditions'
     - kind: Pooler
-      name: poolers.postgresql.cnpg.io
+      name: poolers.postgresql.acceldata.io
       displayName: Pooler
       description: Pooler for a Postgres Cluster (with PgBouncer)
       version: v1
@@ -590,7 +590,7 @@ spec:
       - path: secrets.pgBouncerSecrets.authQuery.name
         description: The authQuery secret
     - kind: ScheduledBackup
-      name: scheduledbackups.postgresql.cnpg.io
+      name: scheduledbackups.postgresql.acceldata.io
       displayName: Scheduled Backups
       description: Backup scheduler for a given Postgres cluster
       version: v1

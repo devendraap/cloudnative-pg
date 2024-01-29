@@ -10,9 +10,9 @@ kind: CustomResourceDefinition
 metadata:
   annotations:
     controller-gen.kubebuilder.io/version: v0.13.0
-  name: backups.postgresql.cnpg.io
+  name: backups.postgresql.acceldata.io
 spec:
-  group: postgresql.cnpg.io
+  group: postgresql.acceldata.io
   names:
     kind: Backup
     listKind: BackupList
@@ -358,9 +358,9 @@ kind: CustomResourceDefinition
 metadata:
   annotations:
     controller-gen.kubebuilder.io/version: v0.13.0
-  name: clusters.postgresql.cnpg.io
+  name: clusters.postgresql.acceldata.io
 spec:
-  group: postgresql.cnpg.io
+  group: postgresql.acceldata.io
   names:
     kind: Cluster
     listKind: ClusterList
@@ -4474,9 +4474,9 @@ kind: CustomResourceDefinition
 metadata:
   annotations:
     controller-gen.kubebuilder.io/version: v0.13.0
-  name: poolers.postgresql.cnpg.io
+  name: poolers.postgresql.acceldata.io
 spec:
-  group: postgresql.cnpg.io
+  group: postgresql.acceldata.io
   names:
     kind: Pooler
     listKind: PoolerList
@@ -12269,9 +12269,9 @@ kind: CustomResourceDefinition
 metadata:
   annotations:
     controller-gen.kubebuilder.io/version: v0.13.0
-  name: scheduledbackups.postgresql.cnpg.io
+  name: scheduledbackups.postgresql.acceldata.io
 spec:
-  group: postgresql.cnpg.io
+  group: postgresql.acceldata.io
   names:
     kind: ScheduledBackup
     listKind: ScheduledBackupList
@@ -12610,7 +12610,7 @@ rules:
   - update
   - watch
 - apiGroups:
-  - postgresql.cnpg.io
+  - postgresql.acceldata.io
   resources:
   - backups
   verbs:
@@ -12622,7 +12622,7 @@ rules:
   - update
   - watch
 - apiGroups:
-  - postgresql.cnpg.io
+  - postgresql.acceldata.io
   resources:
   - backups/status
   verbs:
@@ -12630,7 +12630,7 @@ rules:
   - patch
   - update
 - apiGroups:
-  - postgresql.cnpg.io
+  - postgresql.acceldata.io
   resources:
   - clusters
   verbs:
@@ -12642,13 +12642,13 @@ rules:
   - update
   - watch
 - apiGroups:
-  - postgresql.cnpg.io
+  - postgresql.acceldata.io
   resources:
   - clusters/finalizers
   verbs:
   - update
 - apiGroups:
-  - postgresql.cnpg.io
+  - postgresql.acceldata.io
   resources:
   - clusters/status
   verbs:
@@ -12657,7 +12657,7 @@ rules:
   - update
   - watch
 - apiGroups:
-  - postgresql.cnpg.io
+  - postgresql.acceldata.io
   resources:
   - poolers
   verbs:
@@ -12669,13 +12669,13 @@ rules:
   - update
   - watch
 - apiGroups:
-  - postgresql.cnpg.io
+  - postgresql.acceldata.io
   resources:
   - poolers/finalizers
   verbs:
   - update
 - apiGroups:
-  - postgresql.cnpg.io
+  - postgresql.acceldata.io
   resources:
   - poolers/status
   verbs:
@@ -12684,7 +12684,7 @@ rules:
   - update
   - watch
 - apiGroups:
-  - postgresql.cnpg.io
+  - postgresql.acceldata.io
   resources:
   - scheduledbackups
   verbs:
@@ -12696,7 +12696,7 @@ rules:
   - update
   - watch
 - apiGroups:
-  - postgresql.cnpg.io
+  - postgresql.acceldata.io
   resources:
   - scheduledbackups/status
   verbs:
@@ -13135,7 +13135,7 @@ data:
 kind: ConfigMap
 metadata:
   labels:
-    cnpg.io/reload: ""
+    acceldata.io/reload: ""
   name: cnpg-default-monitoring
   namespace: cnpg-system
 ---
@@ -13225,7 +13225,7 @@ spec:
         volumeMounts:
         - mountPath: /controller
           name: scratch-data
-        - mountPath: /run/secrets/cnpg.io/webhook
+        - mountPath: /run/secrets/acceldata.io/webhook
           name: webhook-certificates
       securityContext:
         runAsNonRoot: true
@@ -13255,10 +13255,10 @@ webhooks:
       namespace: cnpg-system
       path: /mutate-postgresql-cnpg-io-v1-backup
   failurePolicy: Fail
-  name: mbackup.cnpg.io
+  name: mbackup.acceldata.io
   rules:
   - apiGroups:
-    - postgresql.cnpg.io
+    - postgresql.acceldata.io
     apiVersions:
     - v1
     operations:
@@ -13275,10 +13275,10 @@ webhooks:
       namespace: cnpg-system
       path: /mutate-postgresql-cnpg-io-v1-cluster
   failurePolicy: Fail
-  name: mcluster.cnpg.io
+  name: mcluster.acceldata.io
   rules:
   - apiGroups:
-    - postgresql.cnpg.io
+    - postgresql.acceldata.io
     apiVersions:
     - v1
     operations:
@@ -13295,10 +13295,10 @@ webhooks:
       namespace: cnpg-system
       path: /mutate-postgresql-cnpg-io-v1-scheduledbackup
   failurePolicy: Fail
-  name: mscheduledbackup.cnpg.io
+  name: mscheduledbackup.acceldata.io
   rules:
   - apiGroups:
-    - postgresql.cnpg.io
+    - postgresql.acceldata.io
     apiVersions:
     - v1
     operations:
@@ -13321,10 +13321,10 @@ webhooks:
       namespace: cnpg-system
       path: /validate-postgresql-cnpg-io-v1-backup
   failurePolicy: Fail
-  name: vbackup.cnpg.io
+  name: vbackup.acceldata.io
   rules:
   - apiGroups:
-    - postgresql.cnpg.io
+    - postgresql.acceldata.io
     apiVersions:
     - v1
     operations:
@@ -13341,10 +13341,10 @@ webhooks:
       namespace: cnpg-system
       path: /validate-postgresql-cnpg-io-v1-cluster
   failurePolicy: Fail
-  name: vcluster.cnpg.io
+  name: vcluster.acceldata.io
   rules:
   - apiGroups:
-    - postgresql.cnpg.io
+    - postgresql.acceldata.io
     apiVersions:
     - v1
     operations:
@@ -13361,10 +13361,10 @@ webhooks:
       namespace: cnpg-system
       path: /validate-postgresql-cnpg-io-v1-pooler
   failurePolicy: Fail
-  name: vpooler.cnpg.io
+  name: vpooler.acceldata.io
   rules:
   - apiGroups:
-    - postgresql.cnpg.io
+    - postgresql.acceldata.io
     apiVersions:
     - v1
     operations:
@@ -13381,10 +13381,10 @@ webhooks:
       namespace: cnpg-system
       path: /validate-postgresql-cnpg-io-v1-scheduledbackup
   failurePolicy: Fail
-  name: vscheduledbackup.cnpg.io
+  name: vscheduledbackup.acceldata.io
   rules:
   - apiGroups:
-    - postgresql.cnpg.io
+    - postgresql.acceldata.io
     apiVersions:
     - v1
     operations:

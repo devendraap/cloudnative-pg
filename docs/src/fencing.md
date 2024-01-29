@@ -16,7 +16,7 @@ In CloudNativePG you can fence:
 - a list of instances
 - an entire Postgres `Cluster`
 
-Fencing is controlled through the content of the `cnpg.io/fencedInstances`
+Fencing is controlled through the content of the `acceldata.io/fencedInstances`
 annotation, which expects a JSON formatted list of instance names.
 If the annotation is set to `'["*"]'`, a singleton list with a wildcard, the
 whole cluster is fenced.
@@ -25,13 +25,13 @@ annotation was not set.
 
 For example:
 
-- `cnpg.io/fencedInstances: '["cluster-example-1"]'` will fence just
+- `acceldata.io/fencedInstances: '["cluster-example-1"]'` will fence just
   the `cluster-example-1` instance
 
-- `cnpg.io/fencedInstances: '["cluster-example-1","cluster-example-2"]'`
+- `acceldata.io/fencedInstances: '["cluster-example-1","cluster-example-2"]'`
   will fence the `cluster-example-1` and `cluster-example-2` instances
 
-- `cnpg.io/fencedInstances: '["*"]'` will fence every instance in
+- `acceldata.io/fencedInstances: '["*"]'` will fence every instance in
   the cluster.
 
 The annotation can be manually set on the Kubernetes object, for example via
@@ -49,11 +49,11 @@ kubectl cnpg fencing on cluster-example "*"
 Here is an example of a `Cluster` with an instance that was previously fenced:
 
 ```yaml
-apiVersion: postgresql.cnpg.io/v1
+apiVersion: postgresql.acceldata.io/v1
 kind: Cluster
 metadata:
     annotations:
-      cnpg.io/fencedInstances: '["cluster-example-1"]'
+      acceldata.io/fencedInstances: '["cluster-example-1"]'
 [...]
 ```
 

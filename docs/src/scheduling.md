@@ -52,7 +52,7 @@ affinity:
 As a result of the following Cluster spec:
 
 ```yaml
-apiVersion: postgresql.cnpg.io/v1
+apiVersion: postgresql.acceldata.io/v1
 kind: Cluster
 metadata:
   name: cluster-example

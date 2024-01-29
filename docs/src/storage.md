@@ -113,7 +113,7 @@ The easier way to configure the storage for a PostgreSQL class is to just
 request storage of a certain size, like in the following example:
 
 ```yaml
-apiVersion: postgresql.cnpg.io/v1
+apiVersion: postgresql.acceldata.io/v1
 kind: Cluster
 metadata:
   name: postgresql-storage-class
@@ -128,7 +128,7 @@ class. If the target Kubernetes cluster has no default storage class, or even if
 to be satisfied by a known storage class, you can set it into the custom resource:
 
 ```yaml
-apiVersion: postgresql.cnpg.io/v1
+apiVersion: postgresql.acceldata.io/v1
 kind: Cluster
 metadata:
   name: postgresql-storage-class
@@ -145,7 +145,7 @@ To further customize the generated PVCs, you can provide a PVC template inside t
 like in the following example:
 
 ```yaml
-apiVersion: postgresql.cnpg.io/v1
+apiVersion: postgresql.acceldata.io/v1
 kind: Cluster
 metadata:
   name: postgresql-pvc-template
@@ -208,7 +208,7 @@ which follows the same rules described for the `storage` field and provisions a
 dedicated PVC. For example:
 
 ```yaml
-apiVersion: postgresql.cnpg.io/v1
+apiVersion: postgresql.acceldata.io/v1
 kind: Cluster
 metadata:
   name: separate-pgwal-volume
@@ -289,7 +289,7 @@ to recreate the Pod and immediately reattach it to its PVC before the background
 First step is to edit the cluster definition applying the new size, let's say "2Gi", as follows:
 
 ```
-apiVersion: postgresql.cnpg.io/v1
+apiVersion: postgresql.acceldata.io/v1
 kind: Cluster
 metadata:
   name: cluster-example
@@ -363,7 +363,7 @@ While you do that, you need to prevent the operator from changing the existing P
 by disabling the `resizeInUseVolumes` flag, like in the following example:
 
 ```yaml
-apiVersion: postgresql.cnpg.io/v1
+apiVersion: postgresql.acceldata.io/v1
 kind: Cluster
 metadata:
   name: postgresql-pvc-template

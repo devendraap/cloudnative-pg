@@ -22,10 +22,10 @@ database Pods, while keeping the database PVCs.
 
 ## Hibernation
 
-To hibernate a cluster, set the `cnpg.io/hibernation=on` annotation:
+To hibernate a cluster, set the `acceldata.io/hibernation=on` annotation:
 
 ``` sh
-$ kubectl annotate cluster <cluster-name> --overwrite cnpg.io/hibernation=on
+$ kubectl annotate cluster <cluster-name> --overwrite acceldata.io/hibernation=on
 ```
 
 A hibernated cluster won't have any running Pods, while the PVCs are retained
@@ -35,18 +35,18 @@ kept in addition to the primary's PVC.
 The hibernation procedure will delete the primary Pod and then the replica
 Pods, avoiding switchover, to ensure the replicas are kept in sync.
 
-The hibernation status can be monitored by looking for the `cnpg.io/hibernation`
+The hibernation status can be monitored by looking for the `acceldata.io/hibernation`
 condition:
 
 ``` sh
-$ kubectl get cluster <cluster-name> -o "jsonpath={.status.conditions[?(.type==\"cnpg.io/hibernation\")]}" 
+$ kubectl get cluster <cluster-name> -o "jsonpath={.status.conditions[?(.type==\"acceldata.io/hibernation\")]}" 
 
 {
         "lastTransitionTime":"2023-03-05T16:43:35Z",
         "message":"Cluster has been hibernated",
         "reason":"Hibernated",
         "status":"True",
-        "type":"cnpg.io/hibernation"
+        "type":"acceldata.io/hibernation"
 }
 ```
 
@@ -73,16 +73,16 @@ Time     2023-03-05 16:43:35 +0000 UTC
 
 ## Rehydration
 
-To rehydrate a cluster, either set the `cnpg.io/hibernation` annotation to `off`:
+To rehydrate a cluster, either set the `acceldata.io/hibernation` annotation to `off`:
 
 ```
-$ kubectl annotate cluster <cluster-name> --overwrite cnpg.io/hibernation=off
+$ kubectl annotate cluster <cluster-name> --overwrite acceldata.io/hibernation=off
 ```
 
 Or, just unset it altogether:
 
 ```
-$ kubectl annotate cluster <cluster-name> cnpg.io/hibernation-
+$ kubectl annotate cluster <cluster-name> acceldata.io/hibernation-
 ```
 
 The Pods will be recreated and the cluster will resume operation.

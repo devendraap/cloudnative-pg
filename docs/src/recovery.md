@@ -50,8 +50,8 @@ in replica mode (see [replica clusters](replica_cluster.md) for reference).
 For recovery using *volume snapshots*:
 
 - Use a consistent set of `VolumeSnapshot` objects that all belong to the
-  same backup and are identified by the same `cnpg.io/cluster` and
-  `cnpg.io/backupName` labels. Then, recover through the `volumeSnapshots`
+  same backup and are identified by the same `acceldata.io/cluster` and
+  `acceldata.io/backupName` labels. Then, recover through the `volumeSnapshots`
   option in the `.spec.bootstrap.recovery` stanza, as described in
   [Recovery from `VolumeSnapshot` objects](#recovery-from-volumesnapshot-objects).
 
@@ -65,7 +65,7 @@ the `.spec.recovery.source` option.
 This example defines a recovery object store in a blob container in Azure:
 
 ```yaml
-apiVersion: postgresql.cnpg.io/v1
+apiVersion: postgresql.acceldata.io/v1
 kind: Cluster
 metadata:
   name: cluster-restore
@@ -123,7 +123,7 @@ snapshot backups](backup_volumesnapshot.md). You must specify the name of the
 snapshot, as in the following example:
 
 ```yaml
-apiVersion: postgresql.cnpg.io/v1
+apiVersion: postgresql.acceldata.io/v1
 kind: Cluster
 metadata:
   name: cluster-restore
@@ -143,7 +143,7 @@ In case the backed-up cluster was using a separate PVC to store the WAL files,
 the recovery must include that too:
 
 ```yaml
-apiVersion: postgresql.cnpg.io/v1
+apiVersion: postgresql.acceldata.io/v1
 kind: Cluster
 metadata:
   name: cluster-restore
@@ -181,7 +181,7 @@ to create the cluster, you can specify the name using
 `.spec.bootstrap.recovery.backup.name`, as in the following example:
 
 ```yaml
-apiVersion: postgresql.cnpg.io/v1
+apiVersion: postgresql.acceldata.io/v1
 kind: Cluster
 metadata:
   name: cluster-example-initdb
@@ -247,7 +247,7 @@ the base backups and the WAL archive. The recovery target is based on a
 requested timestamp.
 
 ```yaml
-apiVersion: postgresql.cnpg.io/v1
+apiVersion: postgresql.acceldata.io/v1
 kind: Cluster
 metadata:
   name: cluster-restore-pitr
@@ -315,7 +315,7 @@ The example that follows uses:
 The recovery target is based on a requested timestamp.
 
 ```yaml
-apiVersion: postgresql.cnpg.io/v1
+apiVersion: postgresql.acceldata.io/v1
 kind: Cluster
 metadata:
   name: cluster-example-snapshot
@@ -394,7 +394,7 @@ targetImmediate
 This example uses a `targetName`-based recovery target:
 
 ```yaml
-apiVersion: postgresql.cnpg.io/v1
+apiVersion: postgresql.acceldata.io/v1
 kind: Cluster
 [...]
   bootstrap:
@@ -422,7 +422,7 @@ this behavior, relying on a blob container in Azure for both base backups and
 the WAL archive:
 
 ```yaml
-apiVersion: postgresql.cnpg.io/v1
+apiVersion: postgresql.acceldata.io/v1
 kind: Cluster
 metadata:
   name: cluster-restore-pitr
@@ -469,7 +469,7 @@ This example configures the application database `app` with owner `app` and
 supplied secret `app-secret`.
 
 ```yaml
-apiVersion: postgresql.cnpg.io/v1
+apiVersion: postgresql.acceldata.io/v1
 kind: Cluster
 [...]
 spec:
@@ -594,7 +594,7 @@ error state. The pod logs show: `ERROR: WAL archive check failed for server
 recoveredCluster: Expected empty archive`.
 
 !!! Important
-    If you set the `cnpg.io/skipEmptyWalArchiveCheck` annotation to `enabled`
+    If you set the `acceldata.io/skipEmptyWalArchiveCheck` annotation to `enabled`
     in the recovered cluster, you can skip the safety check. We don't recommend
     skipping the check because, for the general use case, the check works fine.
     Skip this check only if you're familiar with the PostgreSQL recovery system, as

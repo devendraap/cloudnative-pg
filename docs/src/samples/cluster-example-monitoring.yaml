@@ -1,4 +1,4 @@
-apiVersion: postgresql.cnpg.io/v1
+apiVersion: postgresql.acceldata.io/v1
 kind: Cluster
 metadata:
   name: cluster-example
@@ -22,7 +22,7 @@ kind: ConfigMap
 metadata:
   name: example-monitoring
   labels:
-    cnpg.io/reload: ""
+    acceldata.io/reload: ""
 data:
   custom-queries: |
     pg_stat_user_tables:
@@ -208,7 +208,7 @@ kind: Secret
 metadata:
   name: example-monitoring-secret
   labels:
-    cnpg.io/reload: ""
+    acceldata.io/reload: ""
 stringData:
   pg-database: |
     pg_database:

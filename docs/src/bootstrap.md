@@ -135,7 +135,7 @@ The following example contains the full structure of the `initdb`
 configuration:
 
 ```yaml
-apiVersion: postgresql.cnpg.io/v1
+apiVersion: postgresql.acceldata.io/v1
 kind: Cluster
 metadata:
   name: cluster-example-initdb
@@ -247,7 +247,7 @@ The following example enables data checksums and sets the default encoding to
 `LATIN1`:
 
 ```yaml
-apiVersion: postgresql.cnpg.io/v1
+apiVersion: postgresql.acceldata.io/v1
 kind: Cluster
 metadata:
   name: cluster-example-initdb
@@ -277,7 +277,7 @@ be executed as the *superuser* (`postgres`), connected to the `postgres`
 database:
 
 ```yaml
-apiVersion: postgresql.cnpg.io/v1
+apiVersion: postgresql.acceldata.io/v1
 kind: Cluster
 metadata:
   name: cluster-example-initdb
@@ -311,7 +311,7 @@ These SQL script will be executed using the **superuser** role (`postgres`),
 connected to the database specified in the `initdb` section:
 
 ```yaml
-apiVersion: postgresql.cnpg.io/v1
+apiVersion: postgresql.acceldata.io/v1
 kind: Cluster
 metadata:
   name: cluster-example-initdb
@@ -498,7 +498,7 @@ the `streaming_replica` user, whose password is stored in the
 `password` key of the `source-db-replica-user` secret.
 
 ```yaml
-apiVersion: postgresql.cnpg.io/v1
+apiVersion: postgresql.acceldata.io/v1
 kind: Cluster
 metadata:
   name: target-db
@@ -548,7 +548,7 @@ information (respectively in the `cluster-example-replication` and
 `cluster-example-ca` secrets).
 
 ```yaml
-apiVersion: postgresql.cnpg.io/v1
+apiVersion: postgresql.acceldata.io/v1
 kind: Cluster
 metadata:
   name: cluster-clone-tls
@@ -590,7 +590,7 @@ The following example configure the application database `app` with password in
 supplied secret `app-secret` after bootstrap from a live cluster.
 
 ```yaml
-apiVersion: postgresql.cnpg.io/v1
+apiVersion: postgresql.acceldata.io/v1
 kind: Cluster
 [...]
 spec:

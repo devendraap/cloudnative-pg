@@ -56,7 +56,7 @@ while creating a cluster:
 You can refer to the following example manifest:
 
 ```yaml
-apiVersion: postgresql.cnpg.io/v1
+apiVersion: postgresql.acceldata.io/v1
 kind: Cluster
 metadata:
   name: postgresql-resources

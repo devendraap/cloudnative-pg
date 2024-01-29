@@ -223,29 +223,29 @@ var _ = Describe("cluster_create unit tests", func() {
 
 		By("checking any service", func() {
 			checkService(anyService, map[string]string{
-				"cnpg.io/podRole": "instance",
-				"cnpg.io/cluster": cluster.Name,
+				"acceldata.io/podRole": "instance",
+				"acceldata.io/cluster": cluster.Name,
 			})
 		})
 
 		By("checking read-write service", func() {
 			checkService(readWriteService, map[string]string{
-				"cnpg.io/cluster": cluster.Name,
-				"role":            "primary",
+				"acceldata.io/cluster": cluster.Name,
+				"role":                 "primary",
 			})
 		})
 
 		By("checking read service", func() {
 			checkService(readService, map[string]string{
-				"cnpg.io/cluster": cluster.Name,
-				"cnpg.io/podRole": "instance",
+				"acceldata.io/cluster": cluster.Name,
+				"acceldata.io/podRole": "instance",
 			})
 		})
 
 		By("checking read only service", func() {
 			checkService(readOnlyService, map[string]string{
-				"cnpg.io/cluster": cluster.Name,
-				"role":            "replica",
+				"acceldata.io/cluster": cluster.Name,
+				"role":                 "replica",
 			})
 		})
 	})

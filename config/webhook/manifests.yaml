@@ -12,10 +12,10 @@ webhooks:
       namespace: system
       path: /mutate-postgresql-cnpg-io-v1-backup
   failurePolicy: Fail
-  name: mbackup.cnpg.io
+  name: mbackup.acceldata.io
   rules:
   - apiGroups:
-    - postgresql.cnpg.io
+    - postgresql.acceldata.io
     apiVersions:
     - v1
     operations:
@@ -32,10 +32,10 @@ webhooks:
       namespace: system
       path: /mutate-postgresql-cnpg-io-v1-cluster
   failurePolicy: Fail
-  name: mcluster.cnpg.io
+  name: mcluster.acceldata.io
   rules:
   - apiGroups:
-    - postgresql.cnpg.io
+    - postgresql.acceldata.io
     apiVersions:
     - v1
     operations:
@@ -52,10 +52,10 @@ webhooks:
       namespace: system
       path: /mutate-postgresql-cnpg-io-v1-scheduledbackup
   failurePolicy: Fail
-  name: mscheduledbackup.cnpg.io
+  name: mscheduledbackup.acceldata.io
   rules:
   - apiGroups:
-    - postgresql.cnpg.io
+    - postgresql.acceldata.io
     apiVersions:
     - v1
     operations:
@@ -78,10 +78,10 @@ webhooks:
       namespace: system
       path: /validate-postgresql-cnpg-io-v1-backup
   failurePolicy: Fail
-  name: vbackup.cnpg.io
+  name: vbackup.acceldata.io
   rules:
   - apiGroups:
-    - postgresql.cnpg.io
+    - postgresql.acceldata.io
     apiVersions:
     - v1
     operations:
@@ -98,10 +98,10 @@ webhooks:
       namespace: system
       path: /validate-postgresql-cnpg-io-v1-cluster
   failurePolicy: Fail
-  name: vcluster.cnpg.io
+  name: vcluster.acceldata.io
   rules:
   - apiGroups:
-    - postgresql.cnpg.io
+    - postgresql.acceldata.io
     apiVersions:
     - v1
     operations:
@@ -118,10 +118,10 @@ webhooks:
       namespace: system
       path: /validate-postgresql-cnpg-io-v1-pooler
   failurePolicy: Fail
-  name: vpooler.cnpg.io
+  name: vpooler.acceldata.io
   rules:
   - apiGroups:
-    - postgresql.cnpg.io
+    - postgresql.acceldata.io
     apiVersions:
     - v1
     operations:
@@ -138,10 +138,10 @@ webhooks:
       namespace: system
       path: /validate-postgresql-cnpg-io-v1-scheduledbackup
   failurePolicy: Fail
-  name: vscheduledbackup.cnpg.io
+  name: vscheduledbackup.acceldata.io
   rules:
   - apiGroups:
-    - postgresql.cnpg.io
+    - postgresql.acceldata.io
     apiVersions:
     - v1
     operations:

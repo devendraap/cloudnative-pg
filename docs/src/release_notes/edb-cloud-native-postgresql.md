@@ -202,7 +202,7 @@ Features:
 - Manage automated resizing of persistent volumes in Azure through the
   `ENABLE_AZURE_PVC_UPDATES` operator configuration option, by issuing a
   rolling update of the cluster if needed (disabled by default)
-- Introduce the`cnpg.io/reconciliationLoop` annotation that, when
+- Introduce the`acceldata.io/reconciliationLoop` annotation that, when
   set to `disabled` on a given Postgres cluster, prevents the reconciliation
   loop from running
 - Introduce the `postInitApplicationSQL` option as part of the `initdb`
@@ -279,7 +279,7 @@ Features:
 - Set the cluster name in the `k8s.enterprisedb.io/cluster` label for every
   object generated in a `Cluster`, including `Backup` objects
 - Drop support for deprecated API version
-  `postgresql.cnpg.io/v1alpha1` on the `Cluster`, `Backup`, and
+  `postgresql.acceldata.io/v1alpha1` on the `Cluster`, `Backup`, and
   `ScheduledBackup` kinds
 - Set default operand image to PostgreSQL 14.2
 
@@ -457,7 +457,7 @@ Features:
       `pg_stat_statements`, ` pgaudit` or `auto_explain` options are added to
       the `postgresql` parameters section
 
-- Support the `cnpg.io/reload` label to finely control the
+- Support the `acceldata.io/reload` label to finely control the
   automated reload of config maps and secrets, including those used for custom
   monitoring/alerting metrics in the Prometheus exporter or to store certificates
 - Add the `reload` command to the `cnp` plugin for `kubectl` to trigger a
@@ -674,7 +674,7 @@ Changes:
 **Release date:** 4 Feb 2021
 
 The first major stable release of CloudNativePG implements `Cluster`,
-`Backup` and `ScheduledBackup` in the API group `postgresql.cnpg.io/v1`.
+`Backup` and `ScheduledBackup` in the API group `postgresql.acceldata.io/v1`.
 It uses these resources to create and manage PostgreSQL clusters inside
 Kubernetes with the following main capabilities:
 

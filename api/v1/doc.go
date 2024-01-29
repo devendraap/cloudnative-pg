@@ -16,5 +16,5 @@ limitations under the License.
 
 // Package v1 contains API Schema definitions for the postgresql v1 API group
 // +kubebuilder:object:generate=true
-// +groupName=postgresql.cnpg.io
+// +groupName=postgresql.acceldata.io
 package v1

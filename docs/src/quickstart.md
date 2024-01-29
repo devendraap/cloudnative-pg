@@ -83,7 +83,7 @@ disk space:
 
 ```yaml
 # Example of PostgreSQL cluster
-apiVersion: postgresql.cnpg.io/v1
+apiVersion: postgresql.acceldata.io/v1
 kind: Cluster
 metadata:
   name: cluster-example
@@ -121,15 +121,15 @@ kubectl get pods
 That will look for pods in the default namespace. To separate your cluster
 from other workloads on your Kubernetes installation, you could always create
 a new namespace to deploy clusters on.
-Alternatively, you can use labels. The operator will apply the `cnpg.io/cluster`
+Alternatively, you can use labels. The operator will apply the `acceldata.io/cluster`
 label on all objects relevant to a particular cluster. For example:
 
 ``` sh
-kubectl get pods -l cnpg.io/cluster=<CLUSTER>
+kubectl get pods -l acceldata.io/cluster=<CLUSTER>
 ```
 
 !!! Important
-    Note that we are using `cnpg.io/cluster` as the label. In the past you may
+    Note that we are using `acceldata.io/cluster` as the label. In the past you may
     have seen or used `postgresql`. This label is being deprecated, and
     will be dropped in the future. Please use `cngp.io/cluster`.
 
@@ -139,7 +139,7 @@ You can override this by setting the `imageName` key in the `spec` section of
 the `Cluster` definition. For example, to install PostgreSQL 13.6:
 
 ```yaml
-apiVersion: postgresql.cnpg.io/v1
+apiVersion: postgresql.acceldata.io/v1
 kind: Cluster
 metadata:
    # [...]
@@ -251,7 +251,7 @@ For example, you could deploy a simple cluster with `PodMonitor` enabled:
 ``` sh
 kubectl apply -f - <<EOF
 ---
-apiVersion: postgresql.cnpg.io/v1
+apiVersion: postgresql.acceldata.io/v1
 kind: Cluster
 metadata:
   name: cluster-with-metrics

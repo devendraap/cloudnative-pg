@@ -504,7 +504,7 @@ purposes.
 ### Hibernation (declarative)
 
 CloudNativePG supports [hibernation of a running PostgreSQL cluster](declarative_hibernation.md)
-in a declarative manner, through the `cnpg.io/hibernation` annotation.
+in a declarative manner, through the `acceldata.io/hibernation` annotation.
 Hibernation enables saving CPU power by removing the database pods while
 keeping the database PVCs. This feature simulates scaling to 0 instances.
 

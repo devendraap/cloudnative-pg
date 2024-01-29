@@ -86,7 +86,7 @@ func (r *Pooler) SetupWebhookWithManager(mgr ctrl.Manager) error {
 }
 
 // TODO(user): change verbs to "verbs=create;update;delete" if you want to enable deletion validation.
-// +kubebuilder:webhook:webhookVersions={v1},admissionReviewVersions={v1},verbs=create;update,path=/validate-postgresql-cnpg-io-v1-pooler,mutating=false,failurePolicy=fail,groups=postgresql.cnpg.io,resources=poolers,versions=v1,name=vpooler.cnpg.io,sideEffects=None
+// +kubebuilder:webhook:webhookVersions={v1},admissionReviewVersions={v1},verbs=create;update,path=/validate-postgresql-cnpg-io-v1-pooler,mutating=false,failurePolicy=fail,groups=postgresql.acceldata.io,resources=poolers,versions=v1,name=vpooler.acceldata.io,sideEffects=None
 
 var _ webhook.Validator = &Pooler{}
 
@@ -108,7 +108,7 @@ func (r *Pooler) ValidateCreate() (warns admission.Warnings, err error) {
 	}
 
 	return nil, apierrors.NewInvalid(
-		schema.GroupKind{Group: "postgresql.cnpg.io", Kind: "Pooler"},
+		schema.GroupKind{Group: "postgresql.acceldata.io", Kind: "Pooler"},
 		r.Name, allErrs)
 }
 
@@ -131,7 +131,7 @@ func (r *Pooler) ValidateUpdate(old runtime.Object) (warns admission.Warnings, e
 	}
 
 	return warns, apierrors.NewInvalid(
-		schema.GroupKind{Group: "postgresql.cnpg.io", Kind: "Pooler"},
+		schema.GroupKind{Group: "postgresql.acceldata.io", Kind: "Pooler"},
 		r.Name, allErrs)
 }
 

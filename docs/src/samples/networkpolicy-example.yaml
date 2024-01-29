@@ -8,7 +8,7 @@ metadata:
 spec:
   podSelector:
     matchLabels:
-      cnpg.io/cluster: cluster-example # The label value must be the cluster name
+      acceldata.io/cluster: cluster-example # The label value must be the cluster name
   ingress:
     - from:
         - namespaceSelector:

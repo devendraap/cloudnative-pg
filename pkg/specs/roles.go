@@ -56,7 +56,7 @@ func CreateRole(cluster apiv1.Cluster, backupOrigin *apiv1.Backup) rbacv1.Role {
 		},
 		{
 			APIGroups: []string{
-				"postgresql.cnpg.io",
+				"postgresql.acceldata.io",
 			},
 			Resources: []string{
 				"clusters",
@@ -72,7 +72,7 @@ func CreateRole(cluster apiv1.Cluster, backupOrigin *apiv1.Backup) rbacv1.Role {
 		},
 		{
 			APIGroups: []string{
-				"postgresql.cnpg.io",
+				"postgresql.acceldata.io",
 			},
 			Resources: []string{
 				"clusters/status",
@@ -89,7 +89,7 @@ func CreateRole(cluster apiv1.Cluster, backupOrigin *apiv1.Backup) rbacv1.Role {
 		},
 		{
 			APIGroups: []string{
-				"postgresql.cnpg.io",
+				"postgresql.acceldata.io",
 			},
 			Resources: []string{
 				"backups",
@@ -102,7 +102,7 @@ func CreateRole(cluster apiv1.Cluster, backupOrigin *apiv1.Backup) rbacv1.Role {
 		},
 		{
 			APIGroups: []string{
-				"postgresql.cnpg.io",
+				"postgresql.acceldata.io",
 			},
 			Resources: []string{
 				"backups/status",

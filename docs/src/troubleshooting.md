@@ -307,7 +307,7 @@ You can retrieve the list of instances that belong to a given PostgreSQL
 cluster with:
 
 ```shell
-kubectl get pod -l cnpg.io/cluster=<CLUSTER> -L role -n <NAMESPACE>
+kubectl get pod -l acceldata.io/cluster=<CLUSTER> -L role -n <NAMESPACE>
 ```
 
 Output:
@@ -439,7 +439,7 @@ info | 1636383566.0664876 | postgres | record
 You can list the backups that have been created for a named cluster with:
 
 ```shell
-kubectl get backup -l cnpg.io/cluster=<CLUSTER>
+kubectl get backup -l acceldata.io/cluster=<CLUSTER>
 ```
 
 !!! Important
@@ -476,7 +476,7 @@ Additionally, you can gather the list of nodes where the pods of a given
 cluster are running with:
 
 ```shell
-kubectl get pod -l cnpg.io/cluster=<CLUSTER> \
+kubectl get pod -l acceldata.io/cluster=<CLUSTER> \
   -L role -n <NAMESPACE> -o wide
 ```
 
@@ -570,7 +570,7 @@ administrator.
 ``` sh
 $ kubectl get networkpolicies                       
 NAME                   POD-SELECTOR                      AGE
-allow-prometheus       cnpg.io/cluster=cluster-example   47m
+allow-prometheus       acceldata.io/cluster=cluster-example   47m
 default-deny-ingress   <none>                            57m
 ```
 
@@ -582,13 +582,13 @@ in the `PGDATA` folder. When that happens, normally it is a bug in PostgreSQL
 to always run the latest minor version of PostgreSQL).
 
 CloudNativePG allows you to control what to include in the core dump through
-the `cnpg.io/coredumpFilter` annotation.
+the `acceldata.io/coredumpFilter` annotation.
 
 !!! Info
     Please refer to ["Labels and annotations"](labels_annotations.md)
     for more details on the standard annotations that CloudNativePG provides.
 
-By default, the `cnpg.io/coredumpFilter` is set to `0x31` in order to
+By default, the `acceldata.io/coredumpFilter` is set to `0x31` in order to
 exclude shared memory segments from the dump, as this is the safest
 approach in most cases.
 
@@ -720,7 +720,7 @@ connectivity.
 ``` sh
 $ kubectl get networkpolicies                       
 NAME                   POD-SELECTOR                      AGE
-allow-prometheus       cnpg.io/cluster=cluster-example   47m
+allow-prometheus       acceldata.io/cluster=cluster-example   47m
 default-deny-ingress   <none>                            57m
 ```
 

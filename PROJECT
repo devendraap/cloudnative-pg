@@ -1,4 +1,4 @@
-domain: cnpg.io
+domain: acceldata.io
 layout:
 - go.kubebuilder.io/v3
 projectName: cloudnative-pg-kubebuilderv3
@@ -8,7 +8,7 @@ resources:
     crdVersion: v1
     namespaced: true
   controller: true
-  domain: cnpg.io
+  domain: acceldata.io
   group: postgresql
   kind: Cluster
   path: github.com/cloudnative-pg/cloudnative-pg/api/v1
@@ -21,7 +21,7 @@ resources:
     crdVersion: v1
     namespaced: true
   controller: true
-  domain: cnpg.io
+  domain: acceldata.io
   group: postgresql
   kind: Backup
   path: github.com/cloudnative-pg/cloudnative-pg/api/v1
@@ -34,7 +34,7 @@ resources:
     crdVersion: v1
     namespaced: true
   controller: true
-  domain: cnpg.io
+  domain: acceldata.io
   group: postgresql
   kind: ScheduledBackup
   path: github.com/cloudnative-pg/cloudnative-pg/api/v1
@@ -47,7 +47,7 @@ resources:
     crdVersion: v1
     namespaced: true
   controller: true
-  domain: cnpg.io
+  domain: acceldata.io
   group: postgresql
   kind: Pooler
   path: github.com/cloudnative-pg/cloudnative-pg/api/v1

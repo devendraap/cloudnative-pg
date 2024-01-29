@@ -22,7 +22,7 @@ in the file [`cluster-example-with-roles.yaml`](samples/cluster-example-with-rol
 Here is an excerpt from that file:
 
 ```yaml
-apiVersion: postgresql.cnpg.io/v1
+apiVersion: postgresql.acceldata.io/v1
 kind: Cluster
 spec:
   managed:
@@ -89,7 +89,7 @@ kind: Secret
 metadata:
   name: cluster-example-dante
   labels:
-    cnpg.io/reload: "true"
+    acceldata.io/reload: "true"
 type: kubernetes.io/basic-auth
 ```
 
@@ -170,7 +170,7 @@ type: kubernetes.io/basic-auth
 metadata:
   name: cluster-example-cavalcanti
   labels:
-    cnpg.io/reload: "true"
+    acceldata.io/reload: "true"
 apiVersion: v1
 stringData:
   username: cavalcanti

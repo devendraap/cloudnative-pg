@@ -9,16 +9,16 @@ webhooks:
   - clientConfig:
       service:
         containerPort: 9443
-    name: vcluster.cnpg.io
+    name: vcluster.acceldata.io
   - clientConfig:
       service:
         containerPort: 9443
-    name: vbackup.cnpg.io
+    name: vbackup.acceldata.io
   - clientConfig:
       service:
         containerPort: 9443
-    name: vscheduledbackup.cnpg.io
+    name: vscheduledbackup.acceldata.io
   - clientConfig:
       service:
         containerPort: 9443
-    name: vpooler.cnpg.io
+    name: vpooler.acceldata.io

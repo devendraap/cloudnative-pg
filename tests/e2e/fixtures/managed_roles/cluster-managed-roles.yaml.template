@@ -1,4 +1,4 @@
-apiVersion: postgresql.cnpg.io/v1
+apiVersion: postgresql.acceldata.io/v1
 kind: Cluster
 metadata:
   name: cluster-example-with-roles
@@ -58,7 +58,7 @@ kind: Secret
 metadata:
   name: cluster-example-dante
   labels:
-    cnpg.io/reload: "true"
+    acceldata.io/reload: "true"
 type: kubernetes.io/basic-auth
 
 ---
@@ -70,6 +70,6 @@ kind: Secret
 metadata:
   name: cluster-example-cavalcanti
   labels:
-    cnpg.io/reload: "true"
+    acceldata.io/reload: "true"
 type: kubernetes.io/basic-auth
 

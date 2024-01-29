@@ -1,4 +1,4 @@
-apiVersion: postgresql.cnpg.io/v1
+apiVersion: postgresql.acceldata.io/v1
 kind: ScheduledBackup
 metadata:
   name: scheduled-backup-immediate

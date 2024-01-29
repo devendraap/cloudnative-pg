@@ -71,7 +71,7 @@ func (r *Cluster) SetupWebhookWithManager(mgr ctrl.Manager) error {
 		Complete()
 }
 
-// +kubebuilder:webhook:webhookVersions={v1},admissionReviewVersions={v1},path=/mutate-postgresql-cnpg-io-v1-cluster,mutating=true,failurePolicy=fail,groups=postgresql.cnpg.io,resources=clusters,verbs=create;update,versions=v1,name=mcluster.cnpg.io,sideEffects=None
+// +kubebuilder:webhook:webhookVersions={v1},admissionReviewVersions={v1},path=/mutate-postgresql-cnpg-io-v1-cluster,mutating=true,failurePolicy=fail,groups=postgresql.acceldata.io,resources=clusters,verbs=create;update,versions=v1,name=mcluster.acceldata.io,sideEffects=None
 
 var _ webhook.Defaulter = &Cluster{}
 
@@ -273,7 +273,7 @@ func (r *Cluster) defaultPgBaseBackup() {
 }
 
 // TODO(user): change verbs to "verbs=create;update;delete" if you want to enable deletion validation.
-// +kubebuilder:webhook:webhookVersions={v1},admissionReviewVersions={v1},verbs=create;update,path=/validate-postgresql-cnpg-io-v1-cluster,mutating=false,failurePolicy=fail,groups=postgresql.cnpg.io,resources=clusters,versions=v1,name=vcluster.cnpg.io,sideEffects=None
+// +kubebuilder:webhook:webhookVersions={v1},admissionReviewVersions={v1},verbs=create;update,path=/validate-postgresql-cnpg-io-v1-cluster,mutating=false,failurePolicy=fail,groups=postgresql.acceldata.io,resources=clusters,versions=v1,name=vcluster.acceldata.io,sideEffects=None
 
 var _ webhook.Validator = &Cluster{}
 
@@ -286,7 +286,7 @@ func (r *Cluster) ValidateCreate() (admission.Warnings, error) {
 	}
 
 	return nil, apierrors.NewInvalid(
-		schema.GroupKind{Group: "postgresql.cnpg.io", Kind: "Cluster"},
+		schema.GroupKind{Group: "postgresql.acceldata.io", Kind: "Cluster"},
 		r.Name, allErrs)
 }
 
@@ -356,7 +356,7 @@ func (r *Cluster) ValidateUpdate(old runtime.Object) (admission.Warnings, error)
 	}
 
 	return nil, apierrors.NewInvalid(
-		schema.GroupKind{Group: "cluster.cnpg.io", Kind: "Cluster"},
+		schema.GroupKind{Group: "cluster.acceldata.io", Kind: "Cluster"},
 		r.Name, allErrs)
 }
 

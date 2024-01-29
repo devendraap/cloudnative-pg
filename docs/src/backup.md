@@ -177,7 +177,7 @@ the [Go `cron` package format](https://pkg.go.dev/github.com/robfig/cron#hdr-CRO
 This is an example of a scheduled backup:
 
 ```yaml
-apiVersion: postgresql.cnpg.io/v1
+apiVersion: postgresql.acceldata.io/v1
 kind: ScheduledBackup
 metadata:
   name: backup-example
@@ -240,7 +240,7 @@ To request a new backup, you need to create a new `Backup` resource
 like the following one:
 
 ```yaml
-apiVersion: postgresql.cnpg.io/v1
+apiVersion: postgresql.acceldata.io/v1
 kind: Backup
 metadata:
   name: backup-example
@@ -258,11 +258,11 @@ the backup status using the plain `kubectl describe backup <name>` command:
 Name:         backup-example
 Namespace:    default
 Labels:       <none>
-Annotations:  API Version:  postgresql.cnpg.io/v1
+Annotations:  API Version:  postgresql.acceldata.io/v1
 Kind:         Backup
 Metadata:
   Creation Timestamp:  2020-10-26T13:57:40Z
-  Self Link:         /apis/postgresql.cnpg.io/v1/namespaces/default/backups/backup-example
+  Self Link:         /apis/postgresql.acceldata.io/v1/namespaces/default/backups/backup-example
   UID:               ad5f855c-2ffd-454a-a157-900d5f1f6584
 Spec:
   Cluster:
@@ -280,11 +280,11 @@ like in the following example:
 Name:         backup-example
 Namespace:    default
 Labels:       <none>
-Annotations:  API Version:  postgresql.cnpg.io/v1
+Annotations:  API Version:  postgresql.acceldata.io/v1
 Kind:         Backup
 Metadata:
   Creation Timestamp:  2020-10-26T13:57:40Z
-  Self Link:         /apis/postgresql.cnpg.io/v1/namespaces/default/backups/backup-example
+  Self Link:         /apis/postgresql.acceldata.io/v1/namespaces/default/backups/backup-example
   UID:               ad5f855c-2ffd-454a-a157-900d5f1f6584
 Spec:
   Cluster:
@@ -340,7 +340,7 @@ If you prefer to always run backups on the primary, you can set the backup
 target to `primary` as outlined in the example below:
 
 ```yaml
-apiVersion: postgresql.cnpg.io/v1
+apiVersion: postgresql.acceldata.io/v1
 kind: Cluster
 metadata:
   [...]
@@ -367,7 +367,7 @@ The backup target specified in the `Cluster` can be overridden in the `Backup`
 and `ScheduledBackup` types, like in the following example:
 
 ```yaml
-apiVersion: postgresql.cnpg.io/v1
+apiVersion: postgresql.acceldata.io/v1
 kind: Backup
 metadata:
   [...]
