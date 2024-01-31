@@ -43,3 +43,6 @@ make docker-build
 env GOOS=linux GOARCH=amd64
 
 docker buildx build --platform linux/amd64 . -t ghcr.io/devendraap/cloudnative-pg:main --build-arg VERSION=1.22.0-1-g8e0f1038
+
+ToDo:
+  webhook failurePolicy set from Ignore to Fail
