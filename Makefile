@@ -15,7 +15,7 @@
 #
 
 # Image URL to use all building/pushing image targets
-IMAGE_NAME ?= ghcr.io/cloudnative-pg/cloudnative-pg-testing
+IMAGE_NAME ?= ghcr.io/devendraap/cloudnative-pg
 
 # Prevent e2e tests to proceed with empty tag which
 # will be considered as "latest".
@@ -123,7 +123,7 @@ run: generate fmt vet manifests ## Run against the configured Kubernetes cluster
 	go run ./cmd/manager
 
 docker-build: go-releaser ## Build the docker image.
-	GOOS=linux GOARCH=${ARCH} GOPATH=$(go env GOPATH) DATE=${DATE} COMMIT=${COMMIT} VERSION=${VERSION} \
+	GOOS=linux GOARCH=amd64 GOPATH=$(go env GOPATH) DATE=${DATE} COMMIT=${COMMIT} VERSION=${VERSION} \
 	  $(GO_RELEASER) build --skip=validate --clean --single-target $(if $(VERSION),,--snapshot)
 	DOCKER_BUILDKIT=1 docker build . -t ${CONTROLLER_IMG} --build-arg VERSION=${VERSION}
 

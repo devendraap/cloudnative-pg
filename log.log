@@ -1,0 +1,45 @@
+hack/setup-cluster.sh -n1 -r load
+
+kubectl create secret docker-registry ghcr-login-secret --docker-server=https://ghcr.io --docker-username="devendraap" --docker-password="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" --docker-email="devendraparhate@gmail.com" -n cnpg-system1
+
+
+---
+# Postgres
+---
+apiVersion: postgresql.acceldata.io/v1
+kind: Cluster
+metadata:
+  name: postgres
+  namespace: cnpg-system1
+spec:
+  imageName: ghcr.io/cloudnative-pg/postgresql:16
+  instances: 2
+  postgresql:
+    syncReplicaElectionConstraint:
+      enabled: true
+      nodeLabelsAntiAffinity:
+        - kubernetes.io/hostname
+  storage:
+    storageClass: "local-storage"   # Vanilla K8s type
+    size: 30Gi                      # Storage size
+  affinity:
+    additionalPodAffinity:
+      requiredDuringSchedulingIgnoredDuringExecution:
+        - labelSelector:
+            matchExpressions:
+              - key: "acceldata.io/cluster"
+                operator: In
+                values:
+                  - "postgres"
+          topologyKey: "kubernetes.io/hostname"
+
+
+---
+
+make generate-manifest
+
+make docker-build   
+
+env GOOS=linux GOARCH=amd64
+
+docker buildx build --platform linux/amd64 . -t ghcr.io/devendraap/cloudnative-pg:main --build-arg VERSION=1.22.0-1-g8e0f1038
