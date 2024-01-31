@@ -54,17 +54,17 @@ var (
 const (
 	// WebhookSecretName is the name of the secret where the certificates
 	// for the webhook server are stored
-	WebhookSecretName = "cnpg-webhook-cert" // #nosec
+	WebhookSecretName = "ad-cnpg-webhook-cert" // #nosec
 
 	// WebhookServiceName is the name of the service where the webhook server
 	// is reachable
-	WebhookServiceName = "cnpg-webhook-service" // #nosec
+	WebhookServiceName = "ad-cnpg-webhook-service" // #nosec
 
 	// MutatingWebhookConfigurationName is the name of the mutating webhook configuration
-	MutatingWebhookConfigurationName = "cnpg-mutating-webhook-configuration"
+	MutatingWebhookConfigurationName = "ad-cnpg-mutating-webhook-configuration"
 
 	// ValidatingWebhookConfigurationName is the name of the validating webhook configuration
-	ValidatingWebhookConfigurationName = "cnpg-validating-webhook-configuration"
+	ValidatingWebhookConfigurationName = "ad-cnpg-validating-webhook-configuration"
 
 	// The name of the directory containing the TLS certificates
 	defaultWebhookCertDir = "/run/secrets/acceldata.io/webhook"
@@ -73,7 +73,7 @@ const (
 	LeaderElectionID = "db9c8771.acceldata.io"
 
 	// CaSecretName is the name of the secret which is hosting the Operator CA
-	CaSecretName = "cnpg-ca-secret" // #nosec
+	CaSecretName = "ad-cnpg-ca-secret" // #nosec
 
 )
 
